@@ -11,24 +11,50 @@
     </style>
 </head>
 <body>
-<table class="default">
-<tr>
-   <td>Celda 1</td>
-</tr>
-</table>
+
    <?php
-$array = [];
- for ($i=0; $i <20; $i++) { 
+   $array = [];
+   for ($i=0; $i <20; $i++) { 
     $numerosRand = random_int(1,10);
     array_push($array, $numerosRand);
  }
- print_r($array);
-
- 
 
 ?>
 
+<table class="default">
+<tr>
 
+   <?php
+      foreach ($array as $x) {
+        echo "<td>".$x."</td>";
+       } 
+   ?>
+ </tr>
+ </table>
+
+ <?php
+   function maximo($value){
+      return max($value);
+   }
+
+   function minimo($value){
+      return min($value);
+   }
+
+   function nVecesRepite($value){
+      $valorMasRep = array_count_values($value);
+      
+   
+      return max($valorMasRep);
+   }
+  $numeros = maximo($array);
+  echo "Valor maximo ".$numeros."<br>";
+  $numeros = minimo($array);
+  echo "Valor minimo ".$numeros."<br>";
+  $numeros = nVecesRepite($array);
+  echo "Valor que mas se repite ".$numeros."<br>";
+  
+ ?>
 
 
 </body>

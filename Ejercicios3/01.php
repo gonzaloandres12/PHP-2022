@@ -43,9 +43,11 @@
 
    function nVecesRepite($value){
       $valorMasRep = array_count_values($value);
-      
-   
-      return max($valorMasRep);
+      foreach($valorMasRep as $key=>$val){
+         
+       }
+      print_r($valorMasRep);
+      return  "";
    }
   $numeros = maximo($array);
   echo "Valor maximo ".$numeros."<br>";
